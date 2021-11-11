@@ -1,5 +1,8 @@
+// @dart=2.9
+
 import 'package:flutter/material.dart';
 import 'package:tiendaapp/screens/home_screen.dart';
+import 'package:tiendaapp/screens/mapa_screen.dart';
 import 'package:tiendaapp/screens/message_screen.dart';
 import 'package:tiendaapp/services/push_notifications_service.dart';
 
@@ -20,6 +23,7 @@ class _MyAppState extends State<MyApp> {
       new GlobalKey<NavigatorState>();
   final GlobalKey<ScaffoldMessengerState> messengerKey =
       new GlobalKey<ScaffoldMessengerState>();
+  final GlobalKey<ScaffoldState> mapaKey = new GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -44,6 +48,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         'home': (_) => HomeScreen(),
         'message': (_) => MessageScreen(),
+        'mapa': (_) => MapaScreen(),
       },
     );
   }

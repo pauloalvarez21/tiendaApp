@@ -7,8 +7,21 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Home'),
       ),
-      body: Center(
-        child: Text('Home Screen'),
+      body: GridView.count(
+        crossAxisCount: 2,
+        children: <Widget>[
+          //Card Mapas
+          Card(
+            child: Center(
+              child: ElevatedButton(
+                child: Text('Mapa'),
+                onPressed: () {
+                  Navigator.pushNamed(context, 'mapa');
+                },
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

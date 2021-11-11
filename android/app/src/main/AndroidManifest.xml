@@ -1,8 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tiendaapp">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
    <application
         android:label="tiendaapp"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.mapbox.token" android:value="pk.eyJ1IjoicGF1bG9hbHZhcmV6IiwiYSI6ImNrdnM5NHEwczF3OWUydm1ubTg4M2ZzeGQifQ.UwZ7l3SAOlZeCD1orDOztg"/>
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
