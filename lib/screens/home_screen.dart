@@ -6,9 +6,10 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Home'),
+        centerTitle: true,
       ),
-      body: GridView.count(
-        crossAxisCount: 2,
+      body: ListView(
+        padding: EdgeInsets.all(10.0),
         children: <Widget>[
           //Card Mapas
           Card(
@@ -17,6 +18,17 @@ class HomeScreen extends StatelessWidget {
                 child: Text('Mapa'),
                 onPressed: () {
                   Navigator.pushNamed(context, 'mapa');
+                },
+              ),
+            ),
+          ),
+          //Card cliente
+          Card(
+            child: Center(
+              child: ElevatedButton(
+                child: Text('Cliente'),
+                onPressed: () {
+                  Navigator.pushNamed(context, 'cliente');
                 },
               ),
             ),

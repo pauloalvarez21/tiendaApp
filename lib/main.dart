@@ -1,6 +1,7 @@
 // @dart=2.9
 
 import 'package:flutter/material.dart';
+import 'package:tiendaapp/screens/cliente_screen.dart';
 import 'package:tiendaapp/screens/home_screen.dart';
 import 'package:tiendaapp/screens/mapa_screen.dart';
 import 'package:tiendaapp/screens/message_screen.dart';
@@ -49,6 +50,7 @@ class _MyAppState extends State<MyApp> {
         'home': (_) => HomeScreen(),
         'message': (_) => MessageScreen(),
         'mapa': (_) => MapaScreen(),
+        'cliente': (_) => ClienteScreen(),
       },
     );
   }
