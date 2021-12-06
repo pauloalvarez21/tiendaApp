@@ -33,6 +33,17 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
+          //Card negocios
+          Card(
+            child: Center(
+              child: ElevatedButton(
+                child: Text('Negocios'),
+                onPressed: () {
+                  Navigator.pushNamed(context, 'negocio');
+                },
+              ),
+            ),
+          ),
         ],
       ),
     );

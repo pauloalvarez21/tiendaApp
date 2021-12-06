@@ -5,6 +5,7 @@ import 'package:tiendaapp/screens/cliente_screen.dart';
 import 'package:tiendaapp/screens/home_screen.dart';
 import 'package:tiendaapp/screens/mapa_screen.dart';
 import 'package:tiendaapp/screens/message_screen.dart';
+import 'package:tiendaapp/screens/negocios_screen.dart';
 import 'package:tiendaapp/services/push_notifications_service.dart';
 
 void main() async {
@@ -51,6 +52,7 @@ class _MyAppState extends State<MyApp> {
         'message': (_) => MessageScreen(),
         'mapa': (_) => MapaScreen(),
         'cliente': (_) => ClienteScreen(),
+        'negocio': (_) => NegociosScreen(),
       },
     );
   }
