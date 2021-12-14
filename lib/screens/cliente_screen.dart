@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ClienteScreen extends StatefulWidget {
   const ClienteScreen({Key? key}) : super(key: key);
@@ -12,6 +13,8 @@ class _ClienteScreenState extends State<ClienteScreen> {
   String _direccion = '';
   String _telefono = '';
   String _celular = '';
+
+  final firebaseInstance = FirebaseFirestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -104,11 +107,35 @@ class _ClienteScreenState extends State<ClienteScreen> {
     return ElevatedButton(
       child: Text('Enviar'),
       onPressed: () {
-        print(_nombre);
-        print(_direccion);
-        print(_telefono);
-        print(_celular);
+        firebaseInstance.collection("cliente").add({
+          "nombre": _nombre,
+          "direccion": _direccion,
+          "telefono": _telefono,
+          "celular": _celular
+        });
+
+        openDialog();
+
+        setState(() {
+          _nombre = '';
+          _direccion = '';
+          _telefono = '';
+          _celular = '';
+        });
       },
     );
   }
+
+  Future openDialog() => showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+            title: Text('El cliente fue creado con exito'),
+            actions: [
+              TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'home');
+                  },
+                  child: Text('OK'))
+            ],
+          ));
 }

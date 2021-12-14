@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class NegociosScreen extends StatefulWidget {
   const NegociosScreen({Key? key}) : super(key: key);
@@ -15,6 +16,8 @@ class _NegociosScreenState extends State<NegociosScreen> {
   String _celular = '';
   String _web = '';
   String _productos = '';
+
+  final firebaseInstance = FirebaseFirestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -161,7 +164,30 @@ class _NegociosScreenState extends State<NegociosScreen> {
   Widget _botonEnviar() {
     return ElevatedButton(
       child: Text('Enviar'),
-      onPressed: () {},
+      onPressed: () {
+        firebaseInstance.collection("negocio").add({
+          "nombre": _nombre,
+          "direccion": _direccion,
+          "telefono": _telefono,
+          "celular": _celular,
+          "geo": _geo,
+          "web": _web,
+          "productos": _productos
+        });
+      },
     );
   }
+
+  Future openDialog() => showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+            title: Text('El negocio fue creado con exito'),
+            actions: [
+              TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'home');
+                  },
+                  child: Text('OK'))
+            ],
+          ));
 }

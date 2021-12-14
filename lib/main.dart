@@ -3,6 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:tiendaapp/screens/cliente_screen.dart';
 import 'package:tiendaapp/screens/home_screen.dart';
+import 'package:tiendaapp/screens/listaCliente_screen.dart';
+import 'package:tiendaapp/screens/listaNegocio_screen.dart';
+import 'package:tiendaapp/screens/lista_screen.dart';
 import 'package:tiendaapp/screens/mapa_screen.dart';
 import 'package:tiendaapp/screens/message_screen.dart';
 import 'package:tiendaapp/screens/negocios_screen.dart';
@@ -53,6 +56,9 @@ class _MyAppState extends State<MyApp> {
         'mapa': (_) => MapaScreen(),
         'cliente': (_) => ClienteScreen(),
         'negocio': (_) => NegociosScreen(),
+        'lista': (_) => ListaScreen(),
+        'listaCliente': (_) => ListaClienteScreen(),
+        'listaNegocio': (_) => ListaNegocioScreen(),
       },
     );
   }

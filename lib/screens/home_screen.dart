@@ -44,6 +44,17 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
+          //Card Lista
+          Card(
+            child: Center(
+              child: ElevatedButton(
+                child: Text('Lista'),
+                onPressed: () {
+                  Navigator.pushNamed(context, 'lista');
+                },
+              ),
+            ),
+          ),
         ],
       ),
     );
