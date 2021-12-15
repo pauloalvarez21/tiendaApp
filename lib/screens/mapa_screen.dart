@@ -18,6 +18,7 @@ class _MapaScreenState extends State<MapaScreen> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Mapa'),
+          centerTitle: true,
         ),
         body: MapboxMap(
           onMapCreated: _onMapCreated,

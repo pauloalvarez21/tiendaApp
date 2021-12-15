@@ -1,9 +1,14 @@
 // @dart=2.9
 
 import 'package:flutter/material.dart';
+import 'package:tiendaapp/screens/cliente_screen.dart';
 import 'package:tiendaapp/screens/home_screen.dart';
+import 'package:tiendaapp/screens/listaCliente_screen.dart';
+import 'package:tiendaapp/screens/listaNegocio_screen.dart';
+import 'package:tiendaapp/screens/lista_screen.dart';
 import 'package:tiendaapp/screens/mapa_screen.dart';
 import 'package:tiendaapp/screens/message_screen.dart';
+import 'package:tiendaapp/screens/negocios_screen.dart';
 import 'package:tiendaapp/services/push_notifications_service.dart';
 
 void main() async {
@@ -49,6 +54,11 @@ class _MyAppState extends State<MyApp> {
         'home': (_) => HomeScreen(),
         'message': (_) => MessageScreen(),
         'mapa': (_) => MapaScreen(),
+        'cliente': (_) => ClienteScreen(),
+        'negocio': (_) => NegociosScreen(),
+        'lista': (_) => ListaScreen(),
+        'listaCliente': (_) => ListaClienteScreen(),
+        'listaNegocio': (_) => ListaNegocioScreen(),
       },
     );
   }
